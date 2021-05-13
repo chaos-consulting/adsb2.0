@@ -1,0 +1,25 @@
+{
+	"now":[timestamp],
+	"messages":1594,
+	"aircraft":{
+		"[hex]":{
+			"squawk":"7000",
+			"seen":0.2,
+			"station":{
+				"[stationname]":{
+					"fix":"[true|mlat|false]]",
+					"rssix":-16.2,
+					"name":"[stationname]"
+				}
+			},
+			"seen_pos":1.6,
+			"track":311.8,
+			"rssi":-16.2,
+			"altitude":2275,
+			"country":"Germany"
+		},
+		"[hex]":{
+			...
+		}
+	}
+}

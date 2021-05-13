@@ -1,0 +1,23 @@
+{
+	"[Stationname]":{
+		"name":"[Stationname]",
+		"planes":"0",
+		"positions":"0",
+		"seen":"12.05.21 03:23"
+	},
+	"[Stationname]":{
+		"name":"[Stationname]",
+		"planes":"39",
+		"positions":"39",
+		"seen":"now",
+		"lat":[ll.llll],
+		"lon":[ll.llll],
+		"alt":270,
+		"peers":{
+			"[Stationname]":[21,0.4,-1,0],
+			"[Stationname]":[31,0.1,-1,0],
+			....
+		}
+	},
+	...
+}
