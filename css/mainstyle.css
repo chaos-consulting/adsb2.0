@@ -1,0 +1,447 @@
+/*adsb.chaos-consulting.de - stylesheet*/
+/*page*/
+body{
+	margin:0px;
+	font-family:monospace !important;
+}
+a{
+	color:white;
+	text-decoration:none;
+}
+
+/*Navigation*/
+.navbar#navbarDesktop{
+	position:absolute;
+	z-index:999;
+	left:10px;
+	margin-right:490px;
+}
+[class^=tabbar]{
+	z-index:9999;
+	position:fixed;
+}
+.tabbar{
+	right:420px;
+}
+.tabbarRight{
+	right:0px;
+}
+/*buttons*/
+[class^=button]{
+	background:#393f4cd1;
+	font-weight:bold;
+	padding:10px;
+	border-radius:5px;
+	text-align:center;
+}
+.button{
+	color:#ffffff;
+}
+.button:hover{
+	color:#2b72d7dd;
+}
+.buttonWait{
+	color: orange;
+}
+.buttonActive{
+	color:#3388ff;
+}
+.buttonActive:hover{
+	color:white;
+}
+.navbar .button{
+	float:left;
+	margin:1px;
+}
+#tabbar [class^=button]{
+	margin:5px;
+	font-size:24px;
+}
+
+/*Sidebar*/
+.sidebar{
+	position:fixed;
+	right:0px;
+	width:400px;
+	height:100%;
+	z-index:999;
+	background:#393f4cd1;
+	padding:10px;
+	overflow:hidden;
+}
+.sidebarHidden{
+	display:none
+}
+.sidebar .content{
+	height:100%;
+	color:#e9eee7;
+	overflow:hidden;
+	padding:0px;
+	display:none;
+}
+
+.sidebar .content + h1{
+	margin-top:0px;
+}
+
+.sidebar .content h1 > i{
+	font-size:28px;
+	margin-right:10px;
+	float: right;
+}
+
+#planeContent{
+	overflow:auto;
+	scrollbar-width:none;
+}
+#faqContent{
+	overflow:auto;
+	scrollbar-width:none;
+}
+#faqContent h1{
+	margin-top:0px;
+}
+#faqContent h2{
+	margin-bottom:0px;
+}
+#statsContent{
+	overflow:auto;
+}
+/*Picture*/
+#planePictureImage{
+	width:100%;
+}
+
+/*Manual Tables*/
+/*Table*/
+table{
+	width:100%;
+}
+td{
+	padding:5px;
+}
+
+/*Tablehead*/
+thead{
+	background: #2b72d7 !important;
+	font-weight: bold;
+}
+
+/*Button im Tableheader*/
+thead div{
+	float:right;
+}
+
+/*Tablebody*/
+/*Row im Tablebody*/
+tbody tr{
+	background: #272b35;
+}
+
+/*planeInfoTable*/
+table#planeInfoTable td:nth-child(1) {
+	width: 20%;
+}
+table#planeInfoTable td:nth-child(2) {
+	width: 15%;
+}
+
+/*planePositionTable*/
+table#planePositionTable td:nth-child(1) {
+	width: 20%;
+}
+table#planePositionTable td:nth-child(2) {
+	width: 40%;
+}
+
+/*picture*/
+table img{
+	width:100%
+}
+
+/*Tabulator Tables*/
+.tabulator{
+	font-family: monospace !important;
+	border: none;
+	background-color: #fff0 !important;
+	margin-right:2px;
+	margin-left:2px;
+	border: 0px !important;
+}
+.tabulator-header{
+	background-color: #fff0 !important;
+	color: white !important;
+	font-weight: bold !important;
+	border-bottom: none !important;
+	margin-bottom: 2px !important;
+}
+.tabulator-col{
+	background-color: #fff0 !important;
+	border-right: none !important;
+	margin-right: 2px !important;
+}
+.tabulator-sortable{
+	background-color: #2b72d7 !important;
+}
+.tabulator-row{
+	background-color: #fff0 !important;
+	color: #e9eee7 !important;
+}
+.tabulator-cell{
+	border-right: none !important;
+	#margin-right: 2px !important;
+	margin-bottom: 2px !important;
+	background-color: #272b35 !important;
+}
+.tabulator-table{
+	background-color: #fff0 !important;
+}
+.tabulator-row .tabulator-row-even{
+	background-color: #fff0 !important;
+}
+.list{
+	width:100%;
+}
+.listheader td{
+	background:#2b72d7 !important;
+	font-weight:bold;
+}
+.list td{
+	#color:#e9eee7;
+	background:#272b35;
+	margin:1px;
+	padding:2px;
+}
+.listType_bos .tabulator-cell{
+	color: red !important;
+}
+.listType_int .tabulator-cell{
+	color: #ff00c3 !important;
+}
+.listType_mil .tabulator-cell{
+	color: #0f0 !important;
+}
+
+/*Leaflet map*/
+#map{
+	position:absolute !important;
+	width:100%;
+	height:100%;
+}
+
+.leaflet-control-zoom{
+	top: 50px;
+	border:0px !important;
+	color:#ffffff;
+}
+.leaflet-control-zoom-in{
+	color:#ffffff !important;
+	background:#393f4cd1 !important;
+	margin:1px;
+	font-weight:bold;
+	padding:10px;
+	border-radius:5px !important;
+}
+.leaflet-control-zoom-out{
+	color:#ffffff !important;
+	background:#393f4cd1 !important;
+	margin:1px;
+	font-weight:bold;
+	padding:10px;
+	border-radius:5px !important;
+}
+
+/*Marker*/
+div.stationMarker{
+	color:#0051a0;
+	font-size:20px;
+	text-shadow:3px 3px 3px grey;
+	opacity:0.75;
+}
+div.airportMarker{
+	color:#0051a0;
+	font-size:20px;
+	text-shadow:3px 3px 3px grey;
+	opacity:0.5;
+}
+
+/*Heatmap Layer*/
+.leaflet-heatmap-layer{
+	opacity:0.6;
+}
+
+/*Icons*/
+i.fa-check-circle{
+	color:#0f0;
+}
+i.fa-compass{
+	color:orange;
+}
+i.fa-times-circle{
+	color:red;
+}
+i.fa-caret-up{
+	color:#0f0;
+	font-size:14px;
+}
+i.fa-caret-down{
+	color:#f00;
+	font-size:14px;
+}
+i.fa-redo-alt{
+	font-size:14px;
+}
+i.fa-undo-alt{
+	font-size:14px;
+}
+
+/*Filters*/
+.filter{
+	cursor: pointer;
+}
+.filterActive{
+	background: orange !important;
+}
+#filterStationList{
+	padding: 1px;
+	display: inline-block;
+}
+#filterStationList div{
+	background: #272b35;
+	float: left;
+	margin: 1px;
+	padding: 5px;
+	cursor: pointer;
+}
+#filterAltitudeList{
+	height:30px;
+	text-align: center;
+}
+
+.filterAltitude{
+	color: #0000;
+	cursor: pointer;
+}
+.filterAltitudeActive{
+	color: #000f;
+}
+
+/*Disable mobile mode Elements*/
+.mobile{
+	display: none;
+}
+
+/*mobile mode*/
+
+
+
+/*Navbar*/
+.navbar#navbarMobile{
+	position: absolute;
+	z-index: 99999;
+	width:100%;
+	background: #2b72d7;
+	color: white;
+	font-size: 32px;
+	padding: 5px;
+	text-align:center;
+	margin-top:-58px;
+}
+
+.navbar#navbarMobile i{
+	font-size:48px;
+}
+
+.navbar#navbarMobile .fa-bars{
+	float:left;
+}
+
+.navbar#navbarMobile a{
+	vertical-align:middle;
+}
+
+.navbar#navbarMobile .fa-window-close{
+	float:right;
+	margin-right: 10px;
+	#display: none;
+}
+
+/*Menue*/
+.menue{
+	display:none !important;
+	position:absolute;
+	z-index:99999;
+	background: gray;
+	width:100%;
+	top: 58px;
+	bottom:0px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menueButton{
+	display: inline-grid !important;
+	text-align:center;
+	background: #272b35;
+	padding: 5px;
+	font-size: 14px;
+	color: white;
+	border: solid 1px gray;
+}
+
+.menueButton:hover{
+	color: #2b72d7;
+}
+
+.menueButton i{
+	margin-top: auto;
+	display: inline-grid !important;
+	font-size: 48px;
+}
+
+.menueButton a{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+/*Infobox*/
+.infobox{
+	border: solid 1px #2b72d7;
+	background: #2b72d778;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.infobox h1{
+	background: #2b72d7;
+	padding: 5px;
+	font-size: 20px;
+	text-align: center;
+	margin: -10px;
+	margin-bottom: 10px;
+}
+
+/*Map*/
+
+/*Modeswitch*/
+@media screen and (max-width: 1024px){
+	.desktop{
+		display: none;
+	}
+
+	.mobile{
+		display: block;
+	}
+
+	/*body*/
+	body{
+		margin-top:58px;
+	}
+	
+	/*sidebar*/
+	#sidebar{
+		width:100%;
+		left: 0px;
+		padding:0px;
+		padding-top:10px;
+	}
+}

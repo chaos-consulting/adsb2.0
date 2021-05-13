@@ -1,0 +1,61 @@
+/*adsb.chaos-consulting.de - stylesheet*/
+/*page*/
+body{
+	#margin:0px;
+	#font-family:monospace !important;
+}
+.button a{
+	color:white;
+	text-decoration:none;
+}
+
+/*Navigation*/
+.navbar{
+	#position:absolute;
+	z-index:999;
+	left:10px;
+}
+/*buttons*/
+[class^=button]{
+	background:#393f4cd1;
+	font-weight:bold;
+	padding:10px;
+	border-radius:5px;
+	text-align:center;
+}
+.button{
+	color:#ffffff;
+}
+.button:hover{
+	color:#2b72d7dd;
+}
+.buttonWait{
+	color: orange;
+}
+.buttonActive{
+	color:#3388ff;
+}
+.buttonActive:hover{
+	color:white;
+}
+.navbar .button{
+	float:left;
+	margin:1px;
+}
+
+
+
+
+/*Manual Tables*/
+/*Table*/
+table{
+	width:100%;
+}
+td{
+	border: solid 1px;
+}
+
+/*Tablehead*/
+thead{
+	font-weight: bold;
+}
