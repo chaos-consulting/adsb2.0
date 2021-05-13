@@ -3,3 +3,5 @@ Provide the neccessarry data in this directory, preferably by symlinking to a in
 * airports.json
 * station.json
 * planesHistory.json
+
+Data structure is very likely to change in the future. There are so much bad decisions manifested in it, that it is inevitable to do some breaking changes.
