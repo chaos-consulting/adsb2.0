@@ -15,9 +15,32 @@ var table = new Tabulator("#planelist", {
 	columns:[
 		{title:"Hex", field:"hex", sorter:"string"},
 		{title:"Flight", field:"flight", sorter:"string", sorterParams: { alignEmptyValues:"bottom" }},
-		{title:"Altitude", field:"altitude", sorter:"number", sorterParams: { alignEmptyValues:"bottom", thousandSeparator:".", decimalSeparator:"," }},
+		{title:"Alt", field:"altitude", sorter:"number", sorterParams: { alignEmptyValues:"bottom", thousandSeparator:".", decimalSeparator:"," }},
+		{title:"<i class='fas fa-tachometer-alt' title='Speed (km/h)'></i>", field:"speed", sorter:"number"},
+		{title:"<i class='fas fa-location-arrow' title='direction'></i>", field:"track", sorter:"number"},
+		{title:"<i class='fas fa-map-marker' title='Fix'></i>", field:"fix", sorter:"string",formatter:"html"},
+	],
+});
+
+//Tabulator shiplist
+var shipsTable = new Tabulator("#shiplist", {
+	layout:"fitDataFill",
+	placeholder:"No Data Set",
+	height:"100%",
+	rowClick:function(e, row){
+		shipSelect(row["_row"]["data"]["mmsi"]);
+	},
+	rowFormatter:function(row){
+			row.getElement().classList.add("listType_" + row["_row"]["data"]["type"]);
+		},
+	initialSort:[
+		{column:"name",dir:"asc"}
+	],
+	columns:[
+		{title:"MMSI", field:"mmsi", sorter:"string"},
+		{title:"Name", field:"name", sorter:"string", sorterParams: { alignEmptyValues:"bottom" }},
+		{title:"Call", field:"callsign", sorter:"string", sorterParams: { alignEmptyValues:"bottom" }},
 		{title:"Speed", field:"speed", sorter:"number"},
-		{title:"Heading", field:"track", sorter:"number"},
 	],
 });
 
@@ -55,6 +78,7 @@ var stationTable = new Tabulator("#stationlist", {
 		{title:"Station", field:"name", sorter:"string", width:180},
 		{title:"<i class='fas fa-plane'></i>", field:"planes", sorter:"number"},
 		{title:"<i class='fas fa-map-pin'></i>", field:"positions", sorter:"number"},
+		{title:"<i class='fas fa-compass'></i>", field:"mlat", sorter:"number"},
 		{title:"<i class='fas fa-clock'></i>", field:"seen", sorter:"string"},
 	],
 });
@@ -75,6 +99,25 @@ var planeStationsTable = new Tabulator("#planeStations", {
 		{title:"Station", field:"name", sorter:"string", width:200},
 		{title:"<i class='fas fa-ruler'></i>", field:"dist", sorter:"number"},
 		{title:"<i class='fas fa-signal'></i>", field:"rssi", sorter:"number"},
+		{title:"<i class='fas fa-map-pin'></i>", field:"fix", sorter:"string",formatter:"html", width:10},
+	],
+});
+
+//Tabulator shipStations
+var shipStationsTable = new Tabulator("#shipStations", {
+	layout:"fitColumns",
+	height:"500px",
+	placeholder:"No Data Set",
+	//Only a fixed height allows the surrounding div to be set to overflow auto/scroll without sideeffects
+	rowClick:function(e, row){
+		stationSelect(row["_row"]["data"]["name"]);
+	},
+	initialSort:[
+		{column:"name",dir:"asc"}
+	],
+	columns:[
+		{title:"Station", field:"name", sorter:"string", width:200},
+		{title:"<i class='fas fa-ruler'></i>", field:"dist", sorter:"number"},
 		{title:"<i class='fas fa-map-pin'></i>", field:"fix", sorter:"string",formatter:"html", width:10},
 	],
 });
@@ -107,13 +150,14 @@ var statsPositionsTable = new Tabulator("#statsPositionsTable", {
 	],
 	columns:[
 		{title:"Fix", field:"pos", formatter:"html", sorter:"string"},
-		{title:"<i class='fas fa-calculator'></i>", field:"count", sorter:"number"},
-		{title:"<i class='fas fa-chart-bar'></i>", field:"rel", formatter:"progress", formatterParams:{
+		{title:"<i class='fas fa-plane'></i>", field:"adsb", sorter:"number"},
+		{title:"<i class='fas fa-ship'></i>", field:"ais", sorter:"number"}
+		/*{title:"<i class='fas fa-chart-bar'></i>", field:"rel", formatter:"progress", formatterParams:{
 			min:0,
 			max:100,
 			color: "#2b72d7"
 		}
-		}
+		}*/
 	],
 });
 
@@ -130,13 +174,32 @@ var statsTypesTable = new Tabulator("#statsTypesTable", {
 	columns:[
 		{title:"TS", field:"type", visible:false, sorter:"string"},
 		{title:"Type", field:"typeLong", sorter:"string"},
-		{title:"<i class='fas fa-calculator'></i>", field:"count", sorter:"number"},
-		{title:"<i class='fas fa-chart-bar'></i>", field:"rel", formatter:"progress", formatterParams:{
+		{title:"<i class='fas fa-plane'></i>", field:"adsb", sorter:"number"},
+		{title:"<i class='fas fa-ship'></i>", field:"ais", sorter:"number"}
+		/*{title:"<i class='fas fa-chart-bar'></i>", field:"rel", formatter:"progress", formatterParams:{
 			min:0,
 			max:100,
 			color: "#2b72d7"
 		}
-		}
+		}*/
+	],
+});
+
+//Tabulator stations types
+var statsStationsTable = new Tabulator("#statsStationsTable", {
+	layout:"fitDataStretch",
+	placeholder:"Loading...",
+	/*rowFormatter:function(row){
+		row.getElement().classList.add("listType_" + row["_row"]["data"]["type"]);
+	},*/
+	/*initialSort:[
+		{column:"Type",dir:"asc"}
+	],*/
+	columns:[
+		{title:"Stations", field:"online", sorter:"number"},
+		{title:"<i class='fas fa-plane' title='ADSB'></i>", field:"adsb", sorter:"number"},
+		{title:"<i class='fas fa-compass' title='MLAT'></i>", field:"mlat", sorter:"number"},
+		{title:"<i class='fas fa-ship' title='AIS'></i>", field:"ais", sorter:"number"}
 	],
 });
 
