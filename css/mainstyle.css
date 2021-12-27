@@ -22,9 +22,11 @@ a{
 }
 .tabbar{
 	right:420px;
+	top:0px;
 }
 .tabbarRight{
 	right:0px;
+	top:0px;
 }
 /*buttons*/
 [class^=button]{
@@ -68,6 +70,7 @@ a{
 	background:#393f4cd1;
 	padding:10px;
 	overflow:hidden;
+	top:0px;
 }
 .sidebarHidden{
 	display:none
@@ -178,7 +181,7 @@ table img{
 .tabulator-col{
 	background-color: #fff0 !important;
 	border-right: none !important;
-	margin-right: 2px !important;
+	#margin-right: 2px !important;
 }
 .tabulator-sortable{
 	background-color: #2b72d7 !important;
@@ -345,7 +348,6 @@ i.fa-undo-alt{
 	font-size: 32px;
 	padding: 5px;
 	text-align:center;
-	margin-top:-58px;
 }
 
 .navbar#navbarMobile i{
@@ -420,6 +422,25 @@ i.fa-undo-alt{
 	margin-bottom: 10px;
 }
 
+/*activityIndicator*/
+#activityIndicator{
+	position: fixed;
+	top: 50%;
+	right: 50%;
+	z-index: 99999;
+	font-size: 72px;
+	color: orange;
+	#background: gray;
+	padding: 20px;
+	border-radius: 15px;
+	#opacity: 0.8;
+	display: none;
+	animation-name: bcp;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	#animation-direction: alternate;
+}
+
 /*Map*/
 
 /*Modeswitch*/
@@ -432,16 +453,62 @@ i.fa-undo-alt{
 		display: block;
 	}
 
-	/*body*/
-	body{
-		margin-top:58px;
-	}
-	
 	/*sidebar*/
 	#sidebar{
 		width:100%;
 		left: 0px;
 		padding:0px;
-		padding-top:10px;
+		padding-top:60px;
+		#top:50px;
 	}
+}
+
+@keyframes bcp{
+	0%{
+		color: orange;
+	}
+	50%{
+		color: #2b72d7;
+		transform: rotate(180deg);
+	}
+	100%{
+		color: orange;
+		transform: rotate(360deg);
+	}
+}
+
+/* rc3-NOWHERE banner */
+@font-face {
+  font-family: changa-semibold;
+  src: url(../rc3/changa-semibold.ttf);
+}
+
+#rc3
+{
+    position:fixed;
+    bottom:90px;
+    left:-130px;
+    width: 200px;
+    height: 100px;
+    z-index: 699;
+}
+
+#rc3inner
+{
+    background: url(../rc3/10_Background_desktop_01.jpg);
+    text-align: center;
+    font-family:changa-semibold;
+    font-size: 20px;
+    transform: rotate(45deg);
+    margin-bottom:auto;
+    color: white;
+    width: 500px;
+}
+
+#rc3logo
+{
+   width: 100px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
 }

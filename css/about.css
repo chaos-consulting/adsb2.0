@@ -2,11 +2,22 @@
 /*page*/
 body{
 	#margin:0px;
-	#font-family:monospace !important;
+	font-family:monospace !important;
+	background: #272b35;
+	color: #fff;
 }
-.button a{
+
+a{
 	color:white;
-	text-decoration:none;
+}
+
+hr{
+	color:white;
+}
+
+h1{
+	padding-top: 10px;
+	font-size: 30px;
 }
 
 /*Navigation*/
@@ -14,6 +25,13 @@ body{
 	#position:absolute;
 	z-index:999;
 	left:10px;
+}
+.navbar.a{
+	text-decoration: none;
+}
+
+.navbar#navbarMobile{
+	display: none;
 }
 /*buttons*/
 [class^=button]{
@@ -25,6 +43,9 @@ body{
 }
 .button{
 	color:#ffffff;
+}
+.button a{
+	text-decoration: none;
 }
 .button:hover{
 	color:#2b72d7dd;
@@ -52,10 +73,42 @@ table{
 	width:100%;
 }
 td{
-	border: solid 1px;
+	padding:5px;
 }
 
 /*Tablehead*/
 thead{
+	background: #2b72d7 !important;
 	font-weight: bold;
+}
+
+/*Button im Tableheader*/
+thead div{
+	float:right;
+}
+
+/*Tablebody*/
+/*Row im Tablebody*/
+tbody tr{
+	background: #272b35;
+	color:#fff;
+}
+
+/* rc3-NOWHERE */
+@font-face {
+  font-family: changa-semibold;
+  src: url(../rc3/changa-semibold.ttf);
+}
+
+#rc3
+{
+    clear: left;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    border: 1px solid;
+    background: url(../rc3/10_Background_desktop_01.jpg);
+    font-family: changa-semibold;
+    width: 80%;
+    color: white;
 }
